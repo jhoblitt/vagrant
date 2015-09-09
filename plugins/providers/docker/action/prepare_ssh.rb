@@ -32,6 +32,9 @@ module VagrantPlugins
           if env[:machine].ssh_info[:forward_agent]
             ssh_opts[:extra_args] << "-o ForwardAgent=yes"
           end
+          if env[:machine].ssh_info[:identities_only]
+            ssh_opts[:extra_args] << "-o IdentitiesOnly=yes"
+          end
           ssh_opts[:extra_args] << ssh_command
 
           # Set the opts

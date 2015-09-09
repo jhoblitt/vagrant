@@ -12,7 +12,9 @@ Host <%= host_key %>
   IdentityFile <%= path %>
 <% end -%>
 <% end -%>
+<% if identities_only -%>
   IdentitiesOnly yes
+<% end -%>
   LogLevel FATAL
 <% if forward_agent -%>
   ForwardAgent yes

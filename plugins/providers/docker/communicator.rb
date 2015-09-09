@@ -155,6 +155,9 @@ module VagrantPlugins
         if info[:forward_agent]
           ssh_args << "-o ForwardAgent=yes"
         end
+        if info[:identities_only]
+          ssh_args << "-o IdentitiesOnly=yes"
+        end
         ssh_args.concat(["-o Compression=yes",
                          "-o ConnectTimeout=5",
                          "-o StrictHostKeyChecking=no",

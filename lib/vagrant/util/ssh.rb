@@ -117,7 +117,7 @@ module Vagrant
         # IdentitiesOnly option. Also, we don't enable it in plain mode so
         # that SSH properly searches our identities and tries to do it itself.
         if !Platform.solaris? && !plain_mode
-          command_options += ["-o", "IdentitiesOnly=yes"]
+          command_options += ["-o", "IdentitiesOnly=yes"] if ssh_info[:identities_only]
         end
 
         # If we're not in plain mode, attach the private key path.

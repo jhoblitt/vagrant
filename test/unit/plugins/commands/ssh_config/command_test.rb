@@ -24,7 +24,8 @@ describe VagrantPlugins::CommandSSHConfig::Command do
     username:         "testuser",
     private_key_path: [],
     forward_agent:    false,
-    forward_x11:      false
+    forward_x11:      false,
+    identities_only:  true
   }}
 
   subject { described_class.new(argv, iso_env) }

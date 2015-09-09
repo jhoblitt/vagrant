@@ -334,7 +334,7 @@ module VagrantPlugins
           config:                false,
           forward_agent:         ssh_info[:forward_agent],
           keys:                  ssh_info[:private_key_path],
-          keys_only:             true,
+          keys_only:             ssh_info[:identities_only],
           paranoid:              false,
           password:              ssh_info[:password],
           port:                  ssh_info[:port],

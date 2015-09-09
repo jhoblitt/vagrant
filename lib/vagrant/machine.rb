@@ -433,9 +433,10 @@ module Vagrant
       info[:username] = @config.ssh.username if @config.ssh.username
       info[:password] = @config.ssh.password if @config.ssh.password
 
-      # We also set some fields that are purely controlled by Varant
+      # We also set some fields that are purely controlled by Vagrant
       info[:forward_agent] = @config.ssh.forward_agent
       info[:forward_x11]   = @config.ssh.forward_x11
+      info[:identities_only] = @config.ssh.identities_only
 
       info[:ssh_command] = @config.ssh.ssh_command if @config.ssh.ssh_command
 
